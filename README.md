@@ -9,7 +9,7 @@
 - แก้บัคในเกมต่าง ๆ
 - ทำเกม Text Mode บน Linux, Mac
 
-### สามารถติดต่อผมได้ที่
+### ติดต่อผมได้ที่
 - Facebook - [**กร โรจน์รัตนปัญญา**](https://www.facebook.com/korn64010009/)
 - Email - **64010009@kmitl.ac.th**
 - Discord username - **KORN#0358**
