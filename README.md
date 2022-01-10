@@ -1,15 +1,16 @@
-# 👋 สวัสดีครับ ! / Hi
+# 👋 Hi
 
-## ผมชื่อ กร โรจน์รัตนปัญญา
+## My name is Korn Rojrattanapanya
 
-### สามารถทักมาถามปัญหาต่าง ๆ
-- C++
+### You can ask me for help about
+- C++, Java
 - SFML Library
 - ncurse Library
-- แก้บัคในเกมต่าง ๆ
-- ทำเกม Text Mode บน Linux, Mac
+- Bugs, Code review
+- Linux
 
-### ติดต่อผมได้ที่
-- Facebook - [**กร โรจน์รัตนปัญญา**](https://www.facebook.com/korn64010009/)
-- Email - **64010009@kmitl.ac.th**
-- Discord username - **KORN#0358**
+### Contacts
+- Discord: **KORN#0358**
+- YouTube: https://www.youtube.com/c/kornyellow
+- - Email: **64010009@kmitl.ac.th** or **kornkubzaza@gmail.com**
+- Facebook: https://www.facebook.com/kornyellow
