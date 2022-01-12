@@ -1,4 +1,4 @@
-# 👋 Hi
+# Hi
 
 ## My name is Korn Rojrattanapanya
 
