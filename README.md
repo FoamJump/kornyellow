@@ -1,15 +1,13 @@
-# Hi
+# Hi, My name is Korn Rojrattanapanya
 
-## My name is Korn Rojrattanapanya
-
-### You can ask me for help about
+## You can ask me for help about
 - C++, Java
 - SFML Library
 - ncurse Library
 - Bugs, Code review
 - Linux
 
-### Contacts
+## Contacts
 - Discord: **KORN#0358**
 - YouTube: https://www.youtube.com/c/kornyellow
 - Email: **64010009@kmitl.ac.th** or **kornkubzaza@gmail.com**
