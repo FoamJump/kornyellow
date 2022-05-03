@@ -1,8 +1,8 @@
 # Hi, My name is Korn Rojrattanapanya
 
 ## You can ask me for help about
-- C++, Java, Web development
-- SFML, ncurse library
+- C++, Java, JavaFX Web development
+- SFML, ncurse library, MySQL
 - Bugs, code review
 - Linux
 
