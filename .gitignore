@@ -4,3 +4,5 @@
 /tailwind.sh
 /.idea
 /out
+
+/vendor/
