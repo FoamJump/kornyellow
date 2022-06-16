@@ -1,8 +1,1 @@
-/node_modules
-/package-lock.json
-/package.json
-/tailwind.sh
-/.idea
-/out
-
-/vendor/
+/ssl

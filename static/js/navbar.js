@@ -9,7 +9,8 @@ navCloseOverlay.addEventListener("click", () => nav.classList.remove("active"));
 
 let navButtons = document.querySelectorAll(".js-nav-button");
 navButtons.forEach((navButton) => {
-	console.log(navButton.href);
-	if (navButton.href.includes(window.location.pathname))
+	if (window.location.pathname == "/" && navButton.href.includes("/home"))
+		navButton.classList.add("active");
+	else if (window.location.pathname != "/" && navButton.href.includes(window.location.pathname))
 		navButton.classList.add("active");
 });
