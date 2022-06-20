@@ -1,7 +1,7 @@
 @font-face {
-	font-family: "SOV_monomon";
+	font-family: "SOV_monomon", monospace;
 	font-display: swap;
-	src: local("monospace"), url("/static/fonts/SOV_monomon.ttf");
+	src: local("Tahoma"), url("/static/fonts/SOV_monomon.ttf");
 }
 
 :root {
@@ -9,8 +9,8 @@
 	--dark-gray: #292929;
 	--gray: #393939;
 	--light-gray: #878787;
-	--light: #CCCCCC;
-	--white: #FFFFFF;
+	--light: #CCC;
+	--white: #FFF;
 	--yellow: #FFB212;
 }
 
@@ -18,7 +18,7 @@
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
-	font-family: "SOV_monomon";
+	font-family: "SOV_monomon", monospace;
 	color: var(--white);
 	user-select: none;
 	line-height: 1.5em;
@@ -51,7 +51,7 @@ p {
 	margin-bottom: 0.8em;
 }
 h1 {
-	font-size: 30px;
+	font-size: 24px;
 	padding-bottom: 0.4em;
 }
 
@@ -80,11 +80,12 @@ button:hover {
 		margin-left: 15vw;
 		margin-right: 15vw;
 	}
-	
+
 	p {
-		font-size: 24px;
+		font-size: 20px;
 	}
+
 	h1 {
-		font-size: 40px;
+		font-size: 28px;
 	}
 }

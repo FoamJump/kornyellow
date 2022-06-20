@@ -12,11 +12,20 @@ class Network {
 	public static function getHeader(): string {
 		return self::$header;
 	}
+	public static function setHeader(string $header): void {
+		self::$header = $header;
+	}
 	public static function getDescription(): string {
 		return self::$description;
 	}
+	public static function setDescription(string $description): void {
+		self::$description = $description;
+	}
 	public static function getAbstract(): string {
 		return self::$abstract;
+	}
+	public static function setAbstract(string $abstract): void {
+		self::$abstract = $abstract;
 	}
 	
 	public static function getRequestPath(): string {

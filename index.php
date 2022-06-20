@@ -10,6 +10,9 @@ error_reporting(E_ALL);
 // Set timezone
 date_default_timezone_set('Asia/Bangkok');
 
+// Libraries for autoload classes
+include('vendor/autoload.php');
+
 // Find requested path
 $currentDomainURL = Network::getCurrentDomainURL();
 
