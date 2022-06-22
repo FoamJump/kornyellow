@@ -7,7 +7,7 @@
 - Bugs, code review
 - Manjaro Linux, Windows
 
-** Currently Learning on
+## Currently Learning on
 - Vim, CSS, Javascript
 - Network, Google SEO
 
