@@ -6,48 +6,67 @@
 
 :root {
 	--dark: #1D1D1D;
-	--dark-gray: #292929;
 	--gray: #393939;
-	--light-gray: #878787;
 	--light: #CCC;
 	--white: #FFF;
 	--yellow: #FFB212;
+	--dark-gray: #292929;
+	--light-gray: #878787;
 }
 
 * {
-	padding: 0;
-	margin: 0;
 	box-sizing: border-box;
-	font-family: "SOV_monomon", monospace;
 	color: var(--white);
-	user-select: none;
+	font-family: "SOV_monomon", monospace;
 	line-height: 1.5em;
+	margin: 0;
+	padding: 0;
+	user-select: none;
 }
 
 ::selection {
-	color: var(--white);
 	background: var(--light-gray);
+	color: var(--white);
 }
 
-a.link {
-	font-size: inherit;
+a {
 	color: var(--yellow);
+	font-size: inherit;
 	text-decoration: none;
 	white-space: nowrap;
 }
-a.link:hover {
-	text-decoration: underline;
+a:hover {
 	cursor: pointer;
-}
-
-h1, h2, h3, h4, h5, h6 {
-	font-weight: normal;
 	color: var(--white);
 }
 
-p {
+button {
+	background: none;
+	color: var(--yellow);
+	border: none;
 	font-size: 16px;
+	text-decoration: none;
+	white-space: nowrap;
+	margin-top: 0.5em;
+}
+button:hover {
+	cursor: pointer;
+	color: var(--white);
+}
+
+form {
+	margin-top: 25px;
+	margin-inline: 10px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: var(--white);
+	font-weight: normal;
+}
+
+p {
 	color: var(--light);
+	font-size: 16px;
 	margin-bottom: 0.8em;
 }
 h1 {
@@ -70,15 +89,30 @@ body {
 	padding: 0 10px;
 }
 
-button:hover {
-	cursor: pointer;
+label {
+	font-size: 16px;
+}
+input {
+	background-color: var(--dark);
+	border: solid var(--light-gray) 1px;
+	font-size: 16px;
+	height: 1.8em;
+	outline: none;
+	padding-inline: 5px;
+	width: 100%;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+	color: var(--white);
+}
+input:focus {
+	border: solid var(--white) 1px;
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 900px) {
 	.content {
-		margin-left: 15vw;
-		margin-right: 15vw;
+		margin-inline: auto;
+		width: 900px;
 	}
 
 	p {
@@ -87,5 +121,14 @@ button:hover {
 
 	h1 {
 		font-size: 28px;
+	}
+
+	label,
+	input {
+		font-size: 20px;
+	}
+
+	button {
+		font-size: 20px;
 	}
 }

@@ -1,6 +1,6 @@
 <?php
 
-use libraries\methods\utils\Network;
+use libraries\korn\KornNetwork;
 
 // Make errors visible
 ini_set('display_errors', 1);
@@ -14,26 +14,26 @@ date_default_timezone_set('Asia/Bangkok');
 include('vendor/autoload.php');
 
 // Find requested path
-$currentDomainURL = Network::getCurrentDomainURL();
+$currentDomainURL = KornNetwork::getCurrentDomainURL();
 
-$requestPath  = Network::getRequestPath();
-$absolutePath = Network::getAbsolutePath($requestPath);
-if($requestPath != $absolutePath) {
-	Network::redirectPage($currentDomainURL.'/'.$absolutePath);
+$requestPath  = KornNetwork::getRequestPath();
+$absolutePath = KornNetwork::getAbsolutePath($requestPath);
+if ($requestPath != $absolutePath) {
+	KornNetwork::redirectPage($currentDomainURL.'/'.$absolutePath);
 }
 
 // Preventing user from accessing direct index.php
-if(str_ends_with($absolutePath, 'index.php')) {
+if (str_ends_with($absolutePath, 'index.php')) {
 	$absolutePath = substr($absolutePath, 0, -9);
-	Network::redirectPage($currentDomainURL.'/'.$absolutePath);
+	KornNetwork::redirectPage($currentDomainURL.'/'.$absolutePath);
 }
 
 // Find a requested file
-$requestFile = Network::getDocumentRoot().'/contents/';
+$requestFile = KornNetwork::getDocumentRoot().'/contents/';
 
-if($absolutePath == '')
+if ($absolutePath == '')
 	$requestFile .= 'home.php';
-else if(!file_exists($requestFile.$absolutePath.'.php'))
+else if (!file_exists($requestFile.$absolutePath.'.php'))
 	$requestFile .= $absolutePath.'/index.php';
 else
 	$requestFile .= $absolutePath.'.php';
@@ -41,7 +41,7 @@ else
 // Construct an entire page
 include('templates/header.php');
 
-if(file_exists($requestFile))
+if (file_exists($requestFile))
 	include($requestFile);
 else
 	include('templates/errors/404.php');

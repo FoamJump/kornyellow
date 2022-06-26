@@ -1,10 +1,10 @@
 <?php
 
-namespace libraries\methods\utils;
+namespace libraries\korn;
 
 use JetBrains\PhpStorm\NoReturn;
 
-class Network {
+class KornNetwork {
 	private static string $header;
 	private static string $description;
 	private static string $abstract;
@@ -35,13 +35,6 @@ class Network {
 		
 		return substr($requestURI, 1);
 	}
-	public static function getRemoteIP(): string {
-		$clientIP = $_SERVER['HTTP_CLIENT_IP'];
-		if(filter_var($clientIP ?? '', FILTER_VALIDATE_IP))
-			return $clientIP;
-		
-		return $_SERVER['REMOTE_ADDR'];
-	}
 	public static function getCurrentDomain(): string {
 		return $_SERVER['HTTP_HOST'];
 	}
@@ -51,13 +44,15 @@ class Network {
 		
 		return 'http://'.self::getHost();
 	}
-	public static function getDocumentRoot(): string {
-		return $_SERVER['DOCUMENT_ROOT'];
+	public static function isHTTPS(): bool {
+		if($_SERVER['HTTPS'] ?? false)
+			return true;
+		
+		return false;
 	}
 	public static function getHost(): string {
 		return $_SERVER['HTTP_HOST'];
 	}
-	
 	public static function getAbsolutePath(string $path): string {
 		$path      = str_replace(['/', '\\'], DIRECTORY_SEPARATOR, $path);
 		$parts     = array_filter(explode(DIRECTORY_SEPARATOR, $path), 'strlen');
@@ -74,20 +69,22 @@ class Network {
 		
 		return implode(DIRECTORY_SEPARATOR, $absolutes);
 	}
-	
+	public static function getDocumentRoot(): string {
+		return $_SERVER['DOCUMENT_ROOT'];
+	}
 	public static function isLocalHost(): bool {
 		if(self::getRemoteIP() == '127.0.0.1')
 			return true;
 		
 		return false;
 	}
-	public static function isHTTPS(): bool {
-		if($_SERVER['HTTPS'] ?? false)
-			return true;
+	public static function getRemoteIP(): string {
+		$clientIP = $_SERVER['HTTP_CLIENT_IP'];
+		if(filter_var($clientIP ?? '', FILTER_VALIDATE_IP))
+			return $clientIP;
 		
-		return false;
+		return $_SERVER['REMOTE_ADDR'];
 	}
-	
 	#[NoReturn] public static function redirectPage($url, $delay = 0): void {
 		echo '<meta http-equiv="refresh" content="'.$delay.'" url = "'.$url.'" />';
 		exit;

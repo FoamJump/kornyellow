@@ -1,18 +1,18 @@
 .header {
+	background-color: var(--dark-gray);
+	border-color: var(--gray);
+	border-style: solid;
+	border-width: 0 0 2px 0;
 	display: flex;
 	flex-direction: row;
-	background-color: var(--dark-gray);
-	border-width: 0 0 2px 0;
-	border-color: var(--gray);
- 	border-style: solid;
 	padding: 0 5vw;
 }
 
 .header > .logo {
-	width: 100%;
 	display: flex;
 	justify-content: space-between;
 	padding: 8px 0;
+	width: 100%;
 }
 .header > .logo > .kornyellow {
 	display: flex;
@@ -21,9 +21,9 @@
 	text-decoration: none;
 }
 .header > .logo > .kornyellow > .korn {
-	height: 30px;
 	color: var(--white);
 	font-size: 35px;
+	height: 30px;
 	text-align: center;
 }
 .header > .logo > .kornyellow > .yellow {
@@ -32,70 +32,66 @@
 	text-align: center;
 }
 .header > .logo > button {
+	background: transparent;
+	border: none;
 	color: var(--white);
 	font-size: 30px;
 	text-align: start;
-	background: transparent;
-	border: none;
 }
 
 .header > nav {
 	background-color: var(--dark-gray);
-	border-width: 0 2px 0 0;
 	border-color: var(--gray);
 	border-style: solid;
-	width: 70vw;
+	border-width: 0 2px 0 0;
 	height: 100vh;
-	position: fixed;
 	left: 0;
+	position: fixed;
 	top: 0;
 	transform: translateX(-70vw);
+	width: 70vw;
 }
 .header > nav.active {
 	transform: translateX(0) !important;
 }
 .header > nav > div {
-	position: fixed;
-	left: 0;
-	top: 0;
-	width: 30vw;
 	height: 100vh;
+	left: 0;
+	position: fixed;
+	top: 0;
 	transform: translateX(-30vw);
+	width: 30vw;
 }
 .header > nav.active > div {
 	transform: translateX(70vw);
 }
 .header > nav > button {
-	width: 100%;
-	color: var(--white);
-	font-size: 30px;
-	padding: 25px;
-	padding-left: 30px;
-	padding-right: 0;
-	text-align: start;
 	background: transparent;
 	border: none;
+	color: var(--white);
+	font-size: 30px;
+	padding: 25px 0 25px 30px;
+	text-align: start;
+	width: 100%;
 }
 .header > nav > ul {
+	align-items: center;
 	display: flex;
 	flex-direction: column;
-	align-items: center;
 	list-style-type: none;
 }
 .header > nav > ul > li {
-	display: flex;
 	align-items: center;
-	width: 100%;
+	display: flex;
 	height: 55px;
+	width: 100%;
 }
 .header > nav > ul > li > a {
-	width: 100%;
 	color: var(--light-gray);
 	font-size: 24px;
+	padding: 15px 0 15px 30px;
 	text-decoration: none;
-	padding: 15px;
-	padding-left: 30px;
-	padding-right: 0;
+	width: 100%;
 }
 .header > nav > ul > li > a.active {
 	color: var(--white);
@@ -105,57 +101,55 @@
 	color: var(--white);
 }
 
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 900px) {
 	.header {
 		flex-direction: column;
-		padding: 0 15vw;
+		padding: 0;
 	}
-	
+
 	.header > .logo {
-		width: auto;
-		padding: 20px 30px;
-		padding-bottom: 10px;
+		margin-inline: auto;
+		width: 900px;
 	}
+
 	.header > .logo > .kornyellow > .korn {
 		font-size: 60px;
 		height: 50px;
 	}
+
 	.header > .logo > .kornyellow > .yellow {
 		font-size: 45px;
 	}
+
 	.header > .logo > button {
 		display: none;
 	}
 
 	.header > nav {
-		width: 100%;
+		border: none;
 		height: 100%;
+		margin-inline: auto;
 		position: relative;
 		transform: translateX(0);
-		border: none;
+		width: 900px;
 	}
+
 	.header > nav > div, .header > nav > button {
 		display: none;
 	}
+
 	.header > nav > ul {
 		display: flex;
 		flex-direction: row;
 	}
+
 	.header > nav > ul > li {
-		width: fit-content;
 		height: 45px;
+		width: fit-content;
 	}
+
 	.header > nav > ul > li > a {
 		font-size: 22px;
 		padding: 11px 15px;
 	}
-}
-
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
-}
-
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
 }
