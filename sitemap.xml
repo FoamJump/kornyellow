@@ -31,6 +31,12 @@
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
+		<loc>https://kornyellow.com/courses</loc>
+		<lastmod>2022-06-16</lastmod>
+		<priority>0.8</priority>
+		<changefreq>daily</changefreq>
+	</url>
+	<url>
 		<loc>https://kornyellow.com/contact</loc>
 		<lastmod>2022-06-16</lastmod>
 		<priority>0.8</priority>

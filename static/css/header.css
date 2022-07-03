@@ -5,37 +5,39 @@
 	border-width: 0 0 2px 0;
 	display: flex;
 	flex-direction: row;
-	padding: 0 5vw;
+	padding-inline: 5vw;
 }
 
 .header > .logo {
 	display: flex;
 	justify-content: space-between;
-	padding: 8px 0;
+	padding: 0.8rem 0;
 	width: 100%;
 }
 .header > .logo > .kornyellow {
 	display: flex;
 	flex-direction: column;
 	font-weight: bold;
+	margin-top: 0.4rem;
 	text-decoration: none;
 }
 .header > .logo > .kornyellow > .korn {
 	color: var(--white);
-	font-size: 35px;
-	height: 30px;
+	font-size: 2rem;
 	text-align: center;
 }
 .header > .logo > .kornyellow > .yellow {
 	color: var(--yellow);
-	font-size: 25px;
+	font-size: 1.3rem;
 	text-align: center;
 }
 .header > .logo > button {
 	background: transparent;
 	border: none;
 	color: var(--white);
-	font-size: 30px;
+	display: inline-flex;
+	font-size: 2rem;
+	margin-top: 0.6rem;
 	text-align: start;
 }
 
@@ -46,6 +48,7 @@
 	border-width: 0 2px 0 0;
 	height: 100vh;
 	left: 0;
+	padding-top: 0.8rem;
 	position: fixed;
 	top: 0;
 	transform: translateX(-70vw);
@@ -65,15 +68,6 @@
 .header > nav.active > div {
 	transform: translateX(70vw);
 }
-.header > nav > button {
-	background: transparent;
-	border: none;
-	color: var(--white);
-	font-size: 30px;
-	padding: 25px 0 25px 30px;
-	text-align: start;
-	width: 100%;
-}
 .header > nav > ul {
 	align-items: center;
 	display: flex;
@@ -83,13 +77,12 @@
 .header > nav > ul > li {
 	align-items: center;
 	display: flex;
-	height: 55px;
 	width: 100%;
 }
 .header > nav > ul > li > a {
 	color: var(--light-gray);
-	font-size: 24px;
-	padding: 15px 0 15px 30px;
+	font-size: 1.4rem;
+	padding: 1.2rem 0 1.2rem 3rem;
 	text-decoration: none;
 	width: 100%;
 }
@@ -104,31 +97,36 @@
 @media only screen and (min-width: 900px) {
 	.header {
 		flex-direction: column;
-		padding: 0;
+		padding-bottom: 0;
+		padding-inline: 0;
+		padding-top: 0.6rem;
 	}
 
 	.header > .logo {
 		margin-inline: auto;
+		padding-inline: 1rem;
 		width: 900px;
-	}
-
-	.header > .logo > .kornyellow > .korn {
-		font-size: 60px;
-		height: 50px;
-	}
-
-	.header > .logo > .kornyellow > .yellow {
-		font-size: 45px;
 	}
 
 	.header > .logo > button {
 		display: none;
 	}
 
+	.header > .logo > .kornyellow > .korn {
+		font-size: 3rem;
+	}
+
+	.header > .logo > .kornyellow > .yellow {
+		font-size: 2rem;
+		margin-top: 0.5rem;
+	}
+
 	.header > nav {
 		border: none;
 		height: 100%;
 		margin-inline: auto;
+		padding: 0;
+		padding-inline: 1rem;
 		position: relative;
 		transform: translateX(0);
 		width: 900px;
@@ -144,12 +142,11 @@
 	}
 
 	.header > nav > ul > li {
-		height: 45px;
 		width: fit-content;
 	}
 
 	.header > nav > ul > li > a {
-		font-size: 22px;
-		padding: 11px 15px;
+		font-size: 1rem;
+		padding: 0.5rem 1rem 0.5rem 0;
 	}
 }

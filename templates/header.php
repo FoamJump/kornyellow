@@ -1,3 +1,10 @@
+<?php
+
+namespace templates;
+
+use libraries\kornyellow\KornYellowHeader;
+
+echo '
 <!DOCTYPE html>
 <html lang="th">
 
@@ -9,11 +16,11 @@
 	<meta name="author" content="กร โรจน์รัตนปัญญา (กร)">
 	<meta name="owner" content="kornkubzaza@gmail.com (กร)">
 
-	<title>KORNYELLOW</title>
+	<title>'.KornYellowHeader::getTitle().'</title>
 
 	<meta name="keywords" content="สร้างเกม, ทำเกม, gamemaker, เขียนเกม, ตัดต่อเพลง,เขียนเว็บไซต์, พัฒนาเว็บไซต์, เขียนโปรแกรม, เขียนโค้่ด, html, css, javascript, php, mysql, nodejs, mongodb, korn rojrattanapanya, kornyellow, korn, กร โรจน์รัตนปัญญา">
-	<meta name="description" content="ผม กร โรจน์รัตนปัีญญา ยินดีต้อนรับเข้าสู่เว็บไซต์ของผม บริการทำเว็บ ทำเกม ตัดต่อเพลง">
-	<meta name="abstract" content="หน้าแรกของเว็บไซต์ เกริ่นถึงตัวเอง งานที่รับทำ และอื่น ๆ">
+	<meta name="description" content="'.KornYellowHeader::getDescription().'">
+	<meta name="abstract" content="'.KornYellowHeader::getAbstract().'">
 
 	<!-- Mobile Specific Metas -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -21,6 +28,8 @@
 	<!-- CSS -->
 	<link rel="stylesheet" href="/static/css/root.css">
 	<link rel="stylesheet" href="/static/css/header.css">
+	<link rel="stylesheet" href="/static/css/footer.css">
+	<link rel="stylesheet" href="/static/css/portfolio.css">
 
 	<!-- Favicon -->
 	<link rel="apple-touch-icon" sizes="180x180" href="/static/favicons/apple.png">
@@ -38,11 +47,10 @@
 			<span class="korn">KORN</span>
 			<span class="yellow">YELLOW</span>
 		</a>
-		<button type="button" id="navOpenButton">[=]</button>
+		<button type="button" id="navOpenButton" title="เปิดเมนู">[...]</button>
 	</header>
 	<nav id="nav">
 		<div id="navCloseOverlay"></div>
-		<button type="button" id="navCloseButton">[x]</button>
 		<ul>
 			<li><a class="js-nav-button" title="หน้าหลัก" href="/home">หน้าหลัก</a></li>
 			<li><a class="js-nav-button" title="แนะนำตัว" href="/introduce">แนะนำตัว</a></li>
@@ -55,4 +63,5 @@
 	</nav>
 </div>
 
-<main class="content">
+<main>
+';

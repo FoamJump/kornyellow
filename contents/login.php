@@ -1,3 +1,16 @@
+<?php
+
+namespace contents;
+
+use libraries\kornyellow\KornYellowHeader;
+
+KornYellowHeader::constructHeader(
+	'เข้าสู่ระบบ - KORNYELLOW',
+	'พื้นที่เข้าสู่ระบบเว็บไซต์ kornyellow.com',
+	'พื้นที่เข้าสู่ระบบเว็บไซต์ kornyellow.com'
+);
+
+echo '
 <article>
 	<h1>เข้าสู่ระบบ</h1>
 	<p>ในการใช้งานระบบอื่น ๆ เช่นระบบ <a href="/courses" title="คอร์สเรียน">คอร์สเรียน</a> คุณจะต้องเข้าสู่ระบบก่อนใช้งาน</p>
@@ -11,3 +24,4 @@
 		<button type="submit" title="เข้าสู่ระบบ">[เข้าสู่ระบบ]</button>
 	</form>
 </article>
+';

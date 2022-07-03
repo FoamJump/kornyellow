@@ -1,7 +1,20 @@
+<?php
+
+namespace contents;
+
+use libraries\kornyellow\KornYellowHeader;
+
+KornYellowHeader::constructHeader(
+	'ติดต่อผม - KORNYELLOW',
+'สวัสดีครับ ผมชื่อ กร และนี่คือช่องทางการติดต่อของผม ผมรับทำงานหลาย ๆ อย่าง ไม่ว่าจะเป็นการพัฒนาเว็บไซต์ การเขียนโปรแกรม การสร้างเกม และอื่น ๆ คุณสามารถมาร่วมงานกับผมได้ ในราคาที่ย่อมเยาว์ ติดต่อด่วนได้ที่เบอร์ 084-228-7850',
+	'พื้นที่สำหรับการติดต่อ และรายละเอียดงานที่รับทำ'
+);
+
+echo '
 <article>
 	<h1>สามารถติดต่อผมได้ทาง</h1>
-	<p>โดยตรงเลยสามารถติดต่อได้ทางเบอร์โทรศัพท์ <a title="เบอร์ผมเอง จริง ๆ นะ">084-228-7850</a> หรือจะติดต่อทางอีเมล <a title="ชื่ออีเมลมันดูตลก แต่ผมใช้มานานแล้ว ไม่อยากเปลี่ยน">kornkubzaza@gmail.com</a></p>
-	<p>และจะมีช่องทางอื่น ๆ ตามอินเทอร์เน็ต คือ <a href="https://facebook.com/kornyellow" rel="noopener" title="Facebook ส่วนตัว" target="_blank">Facebook</a> <a href="https://instagram.com/korn.yellow" rel="noopener" title="Instagram ส่วนตัว" target="_blank">Instagram</a> และ Line <a title="ไอดีไลน์ผมเอง">kornkornok</a></p>
+	<p>โดยตรงเลยสามารถติดต่อได้ทางเบอร์โทรศัพท์ <mark title="เบอร์ผมเอง จริง ๆ นะ">084-228-7850</mark> หรือจะติดต่อทางอีเมล <mark title="ชื่ออีเมลมันดูตลก แต่ผมใช้มานานแล้ว ไม่อยากเปลี่ยน">kornkubzaza@gmail.com</mark></p>
+	<p>และจะมีช่องทางอื่น ๆ ตามอินเทอร์เน็ต คือ <a href="https://facebook.com/kornyellow" rel="noopener" title="Facebook ส่วนตัว" target="_blank">Facebook</a> <a href="https://instagram.com/korn.yellow" rel="noopener" title="Instagram ส่วนตัว" target="_blank">Instagram</a> และ Line <mark title="ไอดีไลน์ผมเอง">kornkornok</mark></p>
 </article>
 
 <article>
@@ -17,3 +30,4 @@
 	<p>รับตัดต่อวีดีโอ และเพลง รับงานมาเป็นเวลา 5 ปี โดยเปิดเพจในนามของ <a href="https://facebook.com/weeditkorn" rel="noopener" title="WeEdit Facebook Page" target="_blank">WeEdit</a> ในการรับงาน รับงานกับลูกค้ามาแล้วไม่ต่ำกว่า 100 คน</p>
 	<p>รับออกแบบและสร้างเว็บ โดยใช้โปรแกรม <a href="https://figma.com" rel="noopener" title="Figma" target="_blank">Figma</a> และ <a href="https://php.net" rel="noopener" title="PHP" target="_blank">PHP</a> ในการเขียนเว็บไซต์</p>
 </article>
+';

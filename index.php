@@ -13,6 +13,9 @@ date_default_timezone_set('Asia/Bangkok');
 // Libraries for autoload classes
 include('vendor/autoload.php');
 
+// Start Sessions
+session_start();
+
 // Find requested path
 $currentDomainURL = KornNetwork::getCurrentDomainURL();
 
@@ -28,10 +31,11 @@ if (str_ends_with($absolutePath, 'index.php')) {
 	KornNetwork::redirectPage($currentDomainURL.'/'.$absolutePath);
 }
 
+
 // Find a requested file
 $requestFile = KornNetwork::getDocumentRoot().'/contents/';
 
-if ($absolutePath == '')
+if (empty($absolutePath))
 	$requestFile .= 'home.php';
 else if (!file_exists($requestFile.$absolutePath.'.php'))
 	$requestFile .= $absolutePath.'/index.php';
@@ -39,10 +43,8 @@ else
 	$requestFile .= $absolutePath.'.php';
 
 // Construct an entire page
-include('templates/header.php');
-
 if (file_exists($requestFile))
 	include($requestFile);
 else
-	include('templates/errors/404.php');
+	include('templates/cores/404.php');
 include('templates/footer.php');
