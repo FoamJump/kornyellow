@@ -1,17 +1,18 @@
-# Hi, My name is Korn Rojrattanapanya
+# สวัสดีงับ !
+ผม กร โรจน์รัตนปัญญา ผมคือชาวฟรีแลนซ์ในกรุงเทพฯ ที่รับทำงานหลายอย่างกับลูกค้ามาแล้วเกือบทั่วประเทศ และชอบเขียนโค้ดมาก!
 
-## You can ask me for help about
+## สามารถขอความช่วยเหลือเกี่ยวกับ
 - C++, Java, JavaFX
 - Web Development, PHP, Javascript, HTML, CSS
 - SFML, ncurse library, MySQL
 - Bugs, code review
 - Manjaro Linux, Windows
 
-## Currently Learning on
+## ตอนนี้ผมกำลังเรียนรู้
 - Vim, CSS, Javascript
 - Network, Google SEO
 
-## Contact
+## ติดต่อ
 - Website: https://kornyellow.com
 - Discord: **KORN#358**
 - YouTube: https://youtube.com/c/kornyellow
