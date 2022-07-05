@@ -1,3 +1,8 @@
+<?php
+
+namespace templates;
+
+echo '
 </main>
 
 <footer>
@@ -11,3 +16,4 @@
 </body>
 
 </html>
+';
