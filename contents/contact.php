@@ -2,9 +2,9 @@
 
 namespace contents;
 
-use libraries\kornyellow\KornYellowHeader;
+use libraries\kornyellow\utils\KYHeader;
 
-KornYellowHeader::constructHeader(
+KYHeader::constructHeader(
 	'ติดต่อผม - KORNYELLOW',
 'สวัสดีครับ ผมชื่อ กร และนี่คือช่องทางการติดต่อของผม ผมรับทำงานหลาย ๆ อย่าง ไม่ว่าจะเป็นการพัฒนาเว็บไซต์ การเขียนโปรแกรม การสร้างเกม และอื่น ๆ คุณสามารถมาร่วมงานกับผมได้ ในราคาที่ย่อมเยาว์ ติดต่อด่วนได้ที่เบอร์ 084-228-7850',
 	'พื้นที่สำหรับการติดต่อ และรายละเอียดงานที่รับทำ'

@@ -2,10 +2,10 @@
 
 namespace contents;
 
-use libraries\korn\KornComponent;
-use libraries\kornyellow\KornYellowHeader;
+use libraries\korn\client\KornComponent;
+use libraries\kornyellow\utils\KYHeader;
 
-KornYellowHeader::constructHeader();
+KYHeader::constructHeader();
 
 echo '
 <article>

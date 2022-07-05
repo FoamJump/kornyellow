@@ -1,11 +1,12 @@
 <?php
 
-use libraries\korn\KornNetwork;
+use libraries\korn\utils\KornNetwork;
+use libraries\kornyellow\utils\KYHeader;
 
 // Make errors visible
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+error_reporting(E_ERROR | E_PARSE);
 
 // Set timezone
 date_default_timezone_set('Asia/Bangkok');
@@ -17,20 +18,20 @@ include('vendor/autoload.php');
 session_start();
 
 // Find requested path
-$currentDomainURL = KornNetwork::getCurrentDomainURL();
-
 $requestPath  = KornNetwork::getRequestPath();
 $absolutePath = KornNetwork::getAbsolutePath($requestPath);
 if ($requestPath != $absolutePath) {
-	KornNetwork::redirectPage($currentDomainURL.'/'.$absolutePath);
+	KornNetwork::redirectPage('/'.$absolutePath);
 }
 
 // Preventing user from accessing direct index.php
 if (str_ends_with($absolutePath, 'index.php')) {
 	$absolutePath = substr($absolutePath, 0, -9);
-	KornNetwork::redirectPage($currentDomainURL.'/'.$absolutePath);
+	KornNetwork::redirectPage('/'.$absolutePath);
 }
 
+// Apply Canonical URL
+KYHeader::setCanonical($absolutePath);
 
 // Find a requested file
 $requestFile = KornNetwork::getDocumentRoot().'/contents/';
@@ -46,5 +47,5 @@ else
 if (file_exists($requestFile))
 	include($requestFile);
 else
-	include('templates/cores/404.php');
+	include('templates/errors/404.php');
 include('templates/footer.php');

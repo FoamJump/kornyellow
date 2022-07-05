@@ -2,10 +2,10 @@
 
 namespace contents;
 
-use libraries\korn\KornComponent;
-use libraries\kornyellow\KornYellowHeader;
+use libraries\korn\client\KornComponent;
+use libraries\kornyellow\utils\KYHeader;
 
-KornYellowHeader::constructHeader(
+KYHeader::constructHeader(
 	'ผลงาน - KORNYELLOW',
 	'สวัสดีครับ ผมชื่อ กร และนีคือผลงานของผม ไม่ว่าจะเป็นด้านการเขียนโปรแกรม ด้านกราฟิก ด้านเว็บไซต์ ด้านการออกแบบ และอื่น ๆ สามารถเข้ามาดูได้ เพื่อเป็นการพิจารณาสำหรับการร่วมงานกับผม',
 	'พื้นที่สำหรับการแสดงผลงาน ด้านการเขียนโปรแกรม ด้านกราฟิก ด้านเว็บไซต์ ด้านการออกแบบ'

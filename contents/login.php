@@ -2,13 +2,25 @@
 
 namespace contents;
 
-use libraries\kornyellow\KornYellowHeader;
+use libraries\korn\utils\KornNetwork;
+use libraries\korn\client\KornRequest;
+use libraries\kornyellow\utils\KYHeader;
+use libraries\kornyellow\instances\methods\KYUser;
 
-KornYellowHeader::constructHeader(
+KYHeader::constructHeader(
 	'เข้าสู่ระบบ - KORNYELLOW',
 	'พื้นที่เข้าสู่ระบบเว็บไซต์ kornyellow.com',
 	'พื้นที่เข้าสู่ระบบเว็บไซต์ kornyellow.com'
 );
+
+if (KornRequest::post('submit')->isValid()) {
+	$username = KornRequest::post('username');
+	$password = KornRequest::post('password');
+
+	$isLoginSuccess = KYUser::login($username, $password);
+	if ($isLoginSuccess)
+		KornNetwork::redirectPage('/profile');
+}
 
 echo '
 <article>
@@ -17,11 +29,15 @@ echo '
 
 	<form method="post" action="" spellcheck="false">
 		<label for="username">ชื่อผู้ใช้</label>
-		<input required type="text" id="username" autocomplete="username"/>
+		<input required type="text" id="username" name="username" autocomplete="username"/>
 		<label for="password">รหัีสผ่าน</label>
-		<input required type="password" id="password" autocomplete="current-password"/>
-
-		<button type="submit" title="เข้าสู่ระบบ">[เข้าสู่ระบบ]</button>
+		<input required type="password" id="password" name="password" autocomplete="current-password"/>
+		
+		<input type="checkbox" id="remember_me" name="remember_me"/>
+		<label for="remember_me">จดจำข้อมูลการเข้าสู่ระบบ</label>
+		<br/>
+		
+		<button type="submit" name="submit" title="เข้าสู่ระบบ">[เข้าสู่ระบบ]</button>
 	</form>
 </article>
 ';

@@ -2,9 +2,9 @@
 
 namespace contents;
 
-use libraries\kornyellow\KornYellowHeader;
+use libraries\kornyellow\utils\KYHeader;
 
-KornYellowHeader::constructHeader(
+KYHeader::constructHeader(
 	'แนะนำตัว - KORNYELLOW',
 	'สวัสดีครับ ผมชื่อ กร และนีคือประวัติส่วนตัวของผม ผมรับสอนนอกสถานที่ เป็นวิทยากร ผมมีความสามารถหลายอย่าง มารู้จักผมให้มากขึ้นกัน',
 	'พื้นที่สำหรับการแนะนำตัว รายละเอียดส่วนตัว ความสามารถ'

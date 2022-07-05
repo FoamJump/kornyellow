@@ -1,6 +1,6 @@
 <?php
 
-namespace libraries\korn;
+namespace libraries\korn\client;
 
 class KornComponent {
 	public static function externalLink(string $href, string $text): string {

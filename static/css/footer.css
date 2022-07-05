@@ -20,24 +20,10 @@ body > footer > .wrapper p {
 	font-size: 1em;
 	margin-bottom: 0;
 }
-body > footer .copyright > span {
-	display: none;
-}
-body > footer .stat {
-	color: var(--white);
-}
 
 @media only screen and (min-width: 900px) {
 	body > footer > .wrapper {
 		margin-inline: auto;
 		width: 900px;
-	}
-
-	body > footer .copyright > span {
-		display: inline;
-	}
-
-	body > footer .stat {
-		color: var(--light);
 	}
 }
