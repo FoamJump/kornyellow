@@ -2,20 +2,16 @@
 
 namespace libraries\kornyellow\instances\methods;
 
-use JetBrains\PhpStorm\NoReturn;
-use libraries\korn\utils\KornNetwork;
 use libraries\korn\server\query\KornQuery;
 use libraries\kornyellow\instances\KYMethod;
 use libraries\kornyellow\instances\KYInstance;
-use libraries\korn\server\query\KornQueryUtils;
+use libraries\korn\server\query\KornStatement;
 use libraries\kornyellow\instances\classes\User;
 use libraries\korn\server\query\builder\KornQuerySelect;
 use libraries\korn\server\query\builder\KornQueryReplace;
 
 class KYUser extends KYMethod {
 	private static string $table = 'user';
-
-	private static User|null $loggedIn = null;
 
 	/**
 	 * @param User $instance
@@ -53,7 +49,7 @@ class KYUser extends KYMethod {
 	protected static function processObject(KornQuery $query, bool $isArray = false): User|array|null {
 		$result = [];
 
-		$bind = KornQueryUtils::getEmptyFieldsName(self::$table);
+		$bind = KornStatement::getEmptyFieldsName(self::$table);
 		while ($bind = $query->nextBind($bind)) {
 			$result[] = new User(
 				$bind['u_id'],
@@ -73,38 +69,6 @@ class KYUser extends KYMethod {
 	}
 	public static function update(KYInstance $instance): void {
 		// TODO: Implement update() method.
-	}
-	public static function loggedIn(): User|null {
-		if (self::$loggedIn)
-			return self::$loggedIn;
-
-		if (!isset($_SESSION['u_id']))
-			return null;
-
-		$user = self::get($_SESSION['u_id']);
-		if (!$user)
-			return null;
-
-		self::$loggedIn = $user;
-
-		return $user;
-	}
-	public static function login(string $username, string $password): bool {
-		$user = self::getByUsername($username);
-		if (!$user)
-			return false;
-
-		$userPasswordHash = $user->getPassword();
-		if (!password_verify($password, $userPasswordHash))
-			return false;
-
-		$_SESSION['u_id'] = $user->getID();
-
-		return true;
-	}
-	#[NoReturn] public static function logout() {
-		$_SESSION['u_id'] = null;
-		KornNetwork::redirectPage('/login');
 	}
 	public static function getByUsername(string $username): ?User {
 		$select = new KornQuerySelect(self::$table);

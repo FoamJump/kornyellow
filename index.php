@@ -6,7 +6,7 @@ use libraries\kornyellow\utils\KYHeader;
 // Make errors visible
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
-error_reporting(E_ERROR | E_PARSE);
+error_reporting(E_PARSE | E_ERROR);
 
 // Set timezone
 date_default_timezone_set('Asia/Bangkok');

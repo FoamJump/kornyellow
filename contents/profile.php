@@ -4,9 +4,9 @@ namespace contents;
 
 use libraries\korn\utils\KornNetwork;
 use libraries\kornyellow\utils\KYHeader;
-use libraries\kornyellow\instances\methods\KYUser;
+use libraries\kornyellow\instances\methods\KYAuth;
 
-$user = KYUser::loggedIn();
+$user = KYAuth::getLoggedInUser();
 if (!$user)
 	KornNetwork::redirectPage('/login');
 

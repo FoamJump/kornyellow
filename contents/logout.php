@@ -2,6 +2,6 @@
 
 namespace contents;
 
-use libraries\kornyellow\instances\methods\KYUser;
+use libraries\kornyellow\instances\methods\KYAuth;
 
-KYUser::logout();
+KYAuth::logout();

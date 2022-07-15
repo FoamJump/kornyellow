@@ -4,14 +4,14 @@ namespace templates;
 
 use libraries\korn\utils\KornNetwork;
 use libraries\kornyellow\utils\KYHeader;
-use libraries\kornyellow\instances\methods\KYUser;
+use libraries\kornyellow\instances\methods\KYAuth;
 
 // Tabs
 $otherTabs = '
 <li><a class="js-nav-button" title="เข้าสู่ระบบ" href="/login">เข้าสู่ระบบ</a></li>
 ';
 
-if (KYUser::loggedIn()) {
+if (KYAuth::getLoggedInUser()) {
 	$otherTabs = '
 	<li><a class="js-nav-button" title="โปรไฟล์" href="/profile">โปรไฟล์</a></li>
 	<li><a class="js-nav-button" title="ออกจากระบบ" href="/logout">ออกจากระบบ</a></li>
@@ -29,7 +29,11 @@ echo '
 	<!-- Metas -->
 	<meta charset="UTF-8">
 	
-	<meta http-equiv="Content-Security-Policy" content="default-src \'self\'">
+	<meta http-equiv="Content-Security-Policy" content="
+		default-src \'self\';
+		img-src https://*;
+		frame-src youtube.com www.youtube.com;
+	">
 
 	<meta name="title" content="kornyellow">
 	<meta name="author" content="กร โรจน์รัตนปัญญา (กร)">
@@ -44,9 +48,6 @@ echo '
 	<!-- Mobile Specific Metas -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<!-- Fonts -->
-	<link rel="preload" href="/static/fonts/SOV_monomon.ttf" as="font" type="font/ttf" crossorigin>
-	
 	<!-- CSS -->
 	<link rel="stylesheet" href="/static/css/root.css">
 	<link rel="stylesheet" href="/static/css/header.css">
@@ -58,6 +59,9 @@ echo '
 	<link rel="icon" sizes="any" href="/static/favicons/favicon.ico">
 	<link rel="shortcut icon" href="/static/favicons/favicon.ico">
 	<link rel="manifest" href="/static/favicons/site.webmanifest">
+	
+	<!-- Javasript -->
+	<script src="/static/js/navbar.js" defer async></script>
 	
 	<!-- Canonical -->
 	<link rel="canonical"	href="'.$canonicalURL.'">

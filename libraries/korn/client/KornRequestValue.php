@@ -15,17 +15,16 @@ class KornRequestValue {
 	public function toFloat(): int {
 		return is_numeric($this->value) ? floatval($this->value) : 0.0;
 	}
-	public function toString(): string {
-		return is_string($this->value) ? $this->value : '';
-	}
 	public function isNull(): bool {
 		return $this->value === null;
 	}
 	public function isValid(): bool {
 		return $this->value !== null;
 	}
-
 	public function __toString(): string {
 		return $this->toString();
+	}
+	public function toString(): string {
+		return is_string($this->value) ? $this->value : '';
 	}
 }

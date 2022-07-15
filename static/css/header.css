@@ -36,10 +36,10 @@
 	border: none;
 	color: var(--white);
 	display: inline-flex;
+	font-family: "Monomon", monospace;
 	font-size: 2rem;
 	margin-top: 0.6rem;
 	text-align: start;
-	font-family: "Monomon", monospace;
 }
 
 .header > nav {

@@ -26,16 +26,16 @@
 }
 
 html {
-	color: var(--white);
 	accent-color: var(--yellow);
+	color: var(--white);
 	font-family: "Monomon", monospace;
 	font-size: 14px;
 	line-height: 1.5rem;
 	overflow-y: scroll;
 }
 ::selection {
-	color: var(--dark);
 	background: var(--yellow);
+	color: var(--dark);
 }
 
 body {
@@ -84,20 +84,24 @@ button {
 	background: none;
 	border: none;
 	color: var(--yellow);
+	display: flex;
+	font-family: "Monomon", monospace;
 	font-size: 1rem;
 	margin-top: 0.5em;
+	padding: 0.5rem 0;
 	text-decoration: none;
 	white-space: nowrap;
-	font-family: "Monomon", monospace;
 }
 button:hover {
 	color: var(--white);
 	cursor: pointer;
 }
 
-form {
+form.form {
+	display: grid;
 	margin-inline: 1rem;
-	margin-top: 2rem;
+	margin-top: 1.5rem;
+	row-gap: 0.5rem;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -125,8 +129,26 @@ h3 {
 }
 
 img {
+	border: 1px solid var(--light-gray);
 	height: auto;
+	margin-bottom: 0.5rem;
 	width: 100%;
+}
+iframe.video {
+	aspect-ratio: 16/9;
+	border: 1px solid var(--light-gray);
+	display: flex;
+	height: auto;
+	margin-bottom: 2rem;
+	width: 100%;
+}
+
+.container-grid {
+	column-gap: 1rem;
+	display: grid;
+	grid-template-columns: 1fr;
+	padding: 1rem;
+	row-gap: 1.5rem;
 }
 
 label {
@@ -136,7 +158,34 @@ label {
 input {
 	font-family: "Monomon", monospace;
 }
-input[type="text"], input[type="password"] {
+
+dialog {
+	align-items: center;
+	background-color: var(--dark-gray);
+	border: 2px solid var(--gray);
+	bottom: 3.5rem;
+	display: none;
+	flex-direction: row;
+	justify-content: space-between;
+	left: 0;
+	margin-inline: 1rem;
+	padding: 0.5rem 1.5rem;
+	position: fixed;
+	width: calc(100vw - 2rem);
+}
+dialog[open] {
+	display: flex;
+}
+dialog > p {
+	align-self: center;
+	display: flex;
+	margin: 0;
+}
+dialog > form > button {
+	margin: 0;
+}
+
+.form-control input[type="text"], input[type="password"] {
 	background-color: var(--dark);
 	border: solid var(--light-gray) 1px;
 	color: var(--white);
@@ -148,14 +197,37 @@ input[type="text"], input[type="password"] {
 	padding-inline: 0.5em;
 	width: 100%;
 }
-input:focus {
+.form-control.input:focus {
 	border: solid var(--white) 1px;
 }
-input[type="checkbox"] {
-	display: none;
+
+.form-check input {
+	cursor: pointer;
+	height: 0;
+	opacity: 0;
+	position: absolute;
+	width: 0;
 }
-input[type="checkbox"]:before {
-	content: "[";
+.form-check input:checked ~ label::before {
+	content: "[x]";
+}
+.form-check label {
+	cursor: pointer;
+	padding: 0.5rem 0;
+	user-select: none;
+}
+.form-check label::before {
+	color: var(--light);
+	content: "[ ]";
+	margin-right: 0.8rem;
+}
+
+span.price-badge {
+	background: var(--yellow);
+	border-radius: 5px;
+	color: var(--dark);
+	margin-left: 0.5rem;
+	padding: 0.1rem 0.4rem;
 }
 
 @media only screen and (min-width: 900px) {
@@ -167,6 +239,19 @@ input[type="checkbox"]:before {
 		margin-inline: auto;
 		padding-inline: 1rem;
 		width: 900px;
+	}
+
+	dialog {
+		margin-inline: auto;
+		width: 900px;
+	}
+
+	.form-check input:hover ~ label::before {
+		color: var(--white);
+	}
+
+	.container-grid {
+		grid-template-columns: repeat(2, 1fr);
 	}
 }
 

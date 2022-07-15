@@ -17,7 +17,7 @@ echo '
 
 	<article>
 		<h2>ภาษา C++</h2>
-		<div class="portfolio-grid">
+		<div class="container-grid">
 			<article>
 				'.KornComponent::image('/static/images/portfolio/cpp/tetris.jpg', 'Tetris').'
 				<h3>Tetris</h3>
@@ -40,7 +40,7 @@ echo '
 	</article>
 	<article>
 		<h2>ภาษา Java</h2>
-		<div class="portfolio-grid">
+		<div class="container-grid">
 			<article>
 				'.KornComponent::image('/static/images/portfolio/java/covid_desktop_application.jpg', 'Covid Desktop Application').'
 				<h3>Covid Desktop Application</h3>

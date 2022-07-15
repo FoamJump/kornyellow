@@ -6,7 +6,7 @@ use mysqli_stmt;
 use libraries\korn\utils\KornDebug;
 use libraries\korn\server\database\KornConnection;
 
-class KornQueryUtils {
+class KornStatement {
 	public static function getFieldsName(string $table): array {
 		$statement = self::prepare('SELECT * FROM `'.$table.'`');
 

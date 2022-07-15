@@ -2,7 +2,7 @@
 
 namespace libraries\korn\server\query\builder;
 
-use libraries\korn\server\query\KornQueryUtils;
+use libraries\korn\server\query\KornStatement;
 
 class KornQueryReplace implements KornQueryBuilder {
 	private string $table;
@@ -17,7 +17,7 @@ class KornQueryReplace implements KornQueryBuilder {
 	}
 
 	public function build(): string {
-		$fieldsName = KornQueryUtils::getFieldsName($this->table);
+		$fieldsName = KornStatement::getFieldsName($this->table);
 		if (count($this->values) != count($fieldsName))
 			return '';
 

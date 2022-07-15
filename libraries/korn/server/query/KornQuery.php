@@ -17,7 +17,7 @@ class KornQuery {
 			self::query($queryBuilder->build());
 	}
 	private function query(string $query): void {
-		$statement = KornQueryUtils::prepare($query);
+		$statement = KornStatement::prepare($query);
 
 		$this->affectedRows = $statement->affected_rows;
 		$this->insertedID   = $statement->insert_id;
