@@ -36,16 +36,21 @@ KYHeader::setCanonical($absolutePath);
 // Find a requested file
 $requestFile = KornNetwork::getDocumentRoot().'/contents/';
 
-if (empty($absolutePath))
-	$requestFile .= 'home.php';
-else if (!file_exists($requestFile.$absolutePath.'.php'))
-	$requestFile .= $absolutePath.'/index.php';
-else
-	$requestFile .= $absolutePath.'.php';
+if ($absolutePath == "a.js" || $absolutePath == "b.js") {
+	include($requestFile.$absolutePath);
+}
+else {
+	if (empty($absolutePath))
+		$requestFile .= 'home.php';
+	else if (!file_exists($requestFile.$absolutePath.'.php'))
+		$requestFile .= $absolutePath.'/index.php';
+	else
+		$requestFile .= $absolutePath.'.php';
 
-// Construct an entire page
-if (file_exists($requestFile))
-	include($requestFile);
-else
-	include('templates/errors/404.php');
-include('templates/footer.php');
+	// Construct an entire page
+	if (file_exists($requestFile))
+		include($requestFile);
+	else
+		include('templates/errors/404.php');
+	include('templates/footer.php');
+}
