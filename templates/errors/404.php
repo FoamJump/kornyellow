@@ -2,15 +2,14 @@
 
 namespace templates\errors;
 
-use libraries\kornyellow\utils\KYHeader;
+use libraries\korn\client\KornHeader;
 
-KYHeader::constructHeader(
-	'ไม่พบหน้าดังกล่าว - KORNYELLOW',
-);
+KornHeader::constructHeader('ไม่พบหน้าที่ท่านต้องการ');
 
-echo '
-<article>
-	<h1>เกิดข้อผิดพลาด</h1>
-	<p>เราไม่สามารถหาหน้าดังกล่าวได้ <a class="link" href="/home">กลับสู่หน้าหลัก</a></p>
+?>
+
+<article class="text-center">
+	<h1>404 Error</h1>
+	<p>ไม่พบหน้าที่ท่านต้องการ</p>
+	<a class="btn btn-primary" href="/">กลับสู่หน้าหลัก</a>
 </article>
-';

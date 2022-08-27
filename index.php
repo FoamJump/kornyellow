@@ -1,7 +1,8 @@
 <?php
 
 use libraries\korn\utils\KornNetwork;
-use libraries\kornyellow\utils\KYHeader;
+use libraries\korn\client\KornHeader;
+use libraries\korn\KornConfig;
 
 // Make errors visible
 ini_set('display_errors', 1);
@@ -14,6 +15,15 @@ date_default_timezone_set('Asia/Bangkok');
 // Libraries for autoload classes
 include('vendor/autoload.php');
 
+// Config header
+KornConfig::$websiteName = 'KORNYELLOW';
+KornConfig::$websiteAuthor = 'กร โรจน์รัตนปัญญา (กร)';
+KornConfig::$websiteOwner = 'kornkubzaza@gmail.com';
+KornConfig::$defaultTitle = 'KORNYELLOW';
+KornConfig::$defaultDescription = 'ผม กร โรจน์รัตนปัญญา ยินดีต้อนรับเข้าสู่เว็บไซต์ของผม สนใจร่วมงานกับผมทำเว็บ ทำเกม เขียนโปรแกรมหลายภาษา และอีกมายมาย ติดต่อเข้ามาเลย';
+KornConfig::$defaultAbstract = 'หน้าแรกของเว็บไซต์ เกริ่นถึงตัวเอง งานที่รับทำ และอื่น ๆ';
+KornConfig::$defaultKeywords = 'สร้างเกม, ทำเกม, gamemaker, เขียนเกม, ตัดต่อเพลง, เขียนเว็บไซต์, พัฒนาเว็บไซต์, เขียนโปรแกรม, เขียนโค้ด, html, css, javascript, php, mysql, nodejs, mongodb, korn rojrattanapanya, kornyellow, korn, กร โรจน์รัตนปัญญา';
+
 // Start Sessions
 session_start();
 
@@ -24,33 +34,34 @@ if ($requestPath != $absolutePath) {
 	KornNetwork::redirectPage('/'.$absolutePath);
 }
 
-// Preventing user from accessing direct index.php
+// Preventing user from accessing direct install.php
 if (str_ends_with($absolutePath, 'index.php')) {
 	$absolutePath = substr($absolutePath, 0, -9);
 	KornNetwork::redirectPage('/'.$absolutePath);
 }
 
 // Apply Canonical URL
-KYHeader::setCanonical($absolutePath);
+KornHeader::setCanonical($absolutePath);
 
 // Find a requested file
 $requestFile = KornNetwork::getDocumentRoot().'/contents/';
 
-if ($absolutePath == "a.js" || $absolutePath == "b.js") {
-	include($requestFile.$absolutePath);
+if (empty($absolutePath)) {
+	$requestFile .= 'index.php';
+}
+else if (!file_exists($requestFile.$absolutePath.'.php')) {
+	$requestFile .= $absolutePath.'/index.php';
 }
 else {
-	if (empty($absolutePath))
-		$requestFile .= 'home.php';
-	else if (!file_exists($requestFile.$absolutePath.'.php'))
-		$requestFile .= $absolutePath.'/index.php';
-	else
-		$requestFile .= $absolutePath.'.php';
-
-	// Construct an entire page
-	if (file_exists($requestFile))
-		include($requestFile);
-	else
-		include('templates/errors/404.php');
-	include('templates/footer.php');
+	$requestFile .= $absolutePath.'.php';
 }
+
+// Construct an entire page
+if (file_exists($requestFile)) {
+	include($requestFile);
+}
+else {
+	http_response_code(404);
+	include('templates/errors/404.php');
+}
+include('templates/footer.php');

@@ -3,6 +3,7 @@
 namespace libraries\korn\server\database;
 
 use mysqli;
+use libraries\korn\KornConfig;
 use libraries\korn\utils\KornDebug;
 use libraries\korn\utils\KornNetwork;
 use libraries\korn\utils\KornCredential;
@@ -12,13 +13,13 @@ class KornConnection {
 
 	public static function getDatabase(): mysqli {
 		if (KornNetwork::isLocalHost())
-			return self::getConnection('p:localhost', 'root', '', 'kornyellow_beta');
+			return self::getConnection('p:localhost', 'root', '', KornConfig::$databaseBeta);
 
 		return self::getConnection(
 			'p:localhost',
 			KornCredential::getDatabaseUsername(),
 			KornCredential::getDatabasePassword(),
-			'kornyellow_production'
+			KornConfig::$databaseProduction
 		);
 	}
 	private static function getConnection(

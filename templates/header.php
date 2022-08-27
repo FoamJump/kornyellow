@@ -2,57 +2,47 @@
 
 namespace templates;
 
-use libraries\korn\utils\KornNetwork;
-use libraries\kornyellow\utils\KYHeader;
-use libraries\kornyellow\instances\methods\KYAuth;
-
-// Tabs
-$otherTabs = '
-<li><a class="js-nav-button" title="เข้าสู่ระบบ" href="/login">เข้าสู่ระบบ</a></li>
-';
-
-if (KYAuth::getLoggedInUser()) {
-	$otherTabs = '
-	<li><a class="js-nav-button" title="โปรไฟล์" href="/profile">โปรไฟล์</a></li>
-	<li><a class="js-nav-button" title="ออกจากระบบ" href="/logout">ออกจากระบบ</a></li>
-	';
-}
-
-// Canonical URL
-$canonicalURL = KornNetwork::getCurrentDomainURL().'/'.KYHeader::getCanonical();
+use libraries\korn\client\KornHeader;
 
 echo '
 <!DOCTYPE html>
-<html lang="th">
+<html lang="th" class="h-100">
 
 <head>
 	<!-- Metas -->
 	<meta charset="UTF-8">
 	
 	<meta http-equiv="Content-Security-Policy" content="
-		default-src \'self\';
-		img-src https://*;
+		default-src \'self\' \'unsafe-inline\' fonts.googleapis.com fonts.gstatic.com cdn.jsdelivr.net;
+		script-src \'self\' \'unsafe-inline\' cdn.jsdelivr.net;
+		img-src \'self\';
 		frame-src youtube.com www.youtube.com;
 	">
 
-	<meta name="title" content="kornyellow">
-	<meta name="author" content="กร โรจน์รัตนปัญญา (กร)">
-	<meta name="owner" content="kornkubzaza@gmail.com (กร)">
+	<title>'.KornHeader::getTitle().'</title>
 
-	<title>'.KYHeader::getTitle().'</title>
-
-	<meta name="keywords" content="สร้างเกม, ทำเกม, gamemaker, เขียนเกม, ตัดต่อเพลง,เขียนเว็บไซต์, พัฒนาเว็บไซต์, เขียนโปรแกรม, เขียนโค้่ด, html, css, javascript, php, mysql, nodejs, mongodb, korn rojrattanapanya, kornyellow, korn, กร โรจน์รัตนปัญญา">
-	<meta name="description" content="'.KYHeader::getDescription().'">
-	<meta name="abstract" content="'.KYHeader::getAbstract().'">
+	<meta name="title" content="'.KornHeader::getTitle().'">
+	<meta name="author" content="'.KornHeader::getAuthor().'">
+	<meta name="owner" content="'.KornHeader::getOwner().'">
+	<meta name="keywords" content="'.KornHeader::getKeywords().'">
+	<meta name="description" content="'.KornHeader::getDescription().'">
+	<meta name="abstract" content="'.KornHeader::getAbstract().'">
 
 	<!-- Mobile Specific Metas -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
+	<!-- Bootstrap -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" defer async integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+
+
+	<!-- Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
 	<!-- CSS -->
-	<link rel="stylesheet" href="/static/css/root.css">
-	<link rel="stylesheet" href="/static/css/header.css">
-	<link rel="stylesheet" href="/static/css/footer.css">
-	<link rel="stylesheet" href="/static/css/portfolio.css">
+	<link rel="stylesheet" href="/static/css/stylesheet.css">
 
 	<!-- Favicon -->
 	<link rel="apple-touch-icon" sizes="180x180" href="/static/favicons/apple.png">
@@ -61,36 +51,14 @@ echo '
 	<link rel="manifest" href="/static/favicons/site.webmanifest">
 	
 	<!-- Javasript -->
-	<script src="/static/js/navbar.js" defer async></script>
+	<script src="/static/js/script.js" defer async></script>
 	
 	<!-- Canonical -->
-	<link rel="canonical"	href="'.$canonicalURL.'">
+	<link rel="canonical"	href="https://kornyellow.com/'.KornHeader::getCanonical().'">
 </head>
 
-<body>
+<body class="h-100">
 
-<!-- Navigation -->
-<div class="header">
-	<header class="logo">
-		<a href="/home" class="kornyellow" title="kornyellow.com">
-			<span class="korn">KORN</span>
-			<span class="yellow">YELLOW</span>
-		</a>
-		<button type="button" id="navOpenButton" title="เปิดเมนู">[...]</button>
-	</header>
-	<nav id="nav">
-		<div id="navCloseOverlay"></div>
-		<ul>
-			<li><a class="js-nav-button" title="หน้าหลัก" href="/home">หน้าหลัก</a></li>
-			<li><a class="js-nav-button" title="แนะนำตัว" href="/introduce">แนะนำตัว</a></li>
-			<li><a class="js-nav-button" title="ืบทความ" href="/blog">บทความ</a></li>
-			<li><a class="js-nav-button" title="ผลงาน" href="/portfolio">ผลงาน</a></li>
-			<li><a class="js-nav-button" title="คอร์สเรียน" href="/courses">คอร์สเรียน</a></li>
-			<li><a class="js-nav-button" title="ติดต่อผม" href="/contact">ติดต่อผม</a></li>
-			'.$otherTabs.'
-		</ul>
-	</nav>
-</div>
-
-<main>
+<script>0</script>
+<main class="container mt-5">
 ';
