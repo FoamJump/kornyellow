@@ -4,7 +4,7 @@ namespace contents\documents\godot;
 
 use libraries\korn\client\KornHeader;
 
-KornHeader::constructHeader();
+KornHeader::constructHeader('การติดตั้ง Godot Engine');
 
 ?>
 
