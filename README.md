@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="gruvbox_banner" />
+  <img style="width: 100%" src="gruvbox_banner.png" />
 </p>
 ![kornyellow's GitHub stats](https://github-readme-stats.vercel.app/api?username=kornyellow&show_icons=true&theme=gruvbox)
 
