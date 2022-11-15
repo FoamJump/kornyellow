@@ -1,7 +1,7 @@
 <p align="center">
   <img style="width: 100%" src="gruvbox_banner.png" />
 </p>
-<a href="https://github.com/kornyellow"><img src="https://github-readme-stats.vercel.app/api?username=kornyellow&show_icons=true&theme=gruvbox)"></a>
+<a href="https://github.com/kornyellow"><img src="https://github-readme-stats.vercel.app/api?username=kornyellow&show_icons=true&theme=gruvbox"></a>
 
 # สวัสดีงับ !
 ผม กร โรจน์รัตนปัญญา ผมคือชาวฟรีแลนซ์ในกรุงเทพฯ เป็นนักศึกษาที่ชอบเขียนโค้ดมาก!
