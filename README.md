@@ -1,4 +1,6 @@
-<img src="gruvbox_banner.png">
+<p align="center">
+  <img src="gruvbox_banner" />
+</p>
 ![kornyellow's GitHub stats](https://github-readme-stats.vercel.app/api?username=kornyellow&show_icons=true&theme=gruvbox)
 
 # สวัสดีงับ !
