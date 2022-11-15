@@ -1,3 +1,6 @@
+<img src="gruvbox_banner.png">
+![kornyellow's GitHub stats](https://github-readme-stats.vercel.app/api?username=kornyellow&show_icons=true&theme=gruvbox)
+
 # สวัสดีงับ !
 ผม กร โรจน์รัตนปัญญา ผมคือชาวฟรีแลนซ์ในกรุงเทพฯ เป็นนักศึกษาที่ชอบเขียนโค้ดมาก!
 
@@ -21,6 +24,3 @@
 - YouTube: https://youtube.com/c/kornyellow
 - Email: **64010009@kmitl.ac.th** or **kornkubzaza@gmail.com**
 - Facebook: https://facebook.com/kornyellow
-
-![kornyellow's GitHub stats](https://github-readme-stats.vercel.app/api?username=kornyellow&show_icons=true&theme=gruvbox)
-[![korojrat's 42 stats](https://badge.mediaplus.ma/darkblue/korojrat?1337Badge=off&UM6P=off)](https://github.com/oakoudad/badge42)
