@@ -1,8 +1,11 @@
 # สวัสดีงับ !
 ผม กร โรจน์รัตนปัญญา ผมคือชาวฟรีแลนซ์ในกรุงเทพฯ เป็นนักศึกษาที่ชอบเขียนโค้ดมาก!
 
-## สามารถขอความช่วยเหลือเกี่ยวกับ
-- C, C++, Java, JavaFX
+- KMITL University Student
+- 42Bangkok Student
+
+## สิ่งที่ถนัด
+- C++, Java, JavaFX
 - Web Development, PHP, Javascript, HTML, CSS
 - SFML, ncurse library, MySQL
 - Bugs, code review
@@ -18,3 +21,6 @@
 - YouTube: https://youtube.com/c/kornyellow
 - Email: **64010009@kmitl.ac.th** or **kornkubzaza@gmail.com**
 - Facebook: https://facebook.com/kornyellow
+
+![kornyellow's GitHub stats](https://github-readme-stats.vercel.app/api?username=kornyellow&show_icons=true&theme=gruvbox)
+[![korojrat's 42 stats](https://badge.mediaplus.ma/darkblue/korojrat?1337Badge=off&UM6P=off)](https://github.com/oakoudad/badge42)
