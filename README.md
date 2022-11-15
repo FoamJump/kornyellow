@@ -1,4 +1,4 @@
-<img align="right" width="38%" src="https://i.imgur.com/VxANS89.jpg"/>
+<img align="right" width="50%" src="gruvbox.png"/>
 <a href="https://github.com/kornyellow"><img width="50%" src="https://github-readme-stats.vercel.app/api?username=kornyellow&show_icons=true&theme=gruvbox"></a>
 <a href="https://github.com/kornyellow"><img width="50%" src="http://github-readme-streak-stats.herokuapp.com/?user=kornyellow&theme=gruvbox"></a>
 
