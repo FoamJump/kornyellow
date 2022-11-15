@@ -1,6 +1,6 @@
 <img align="right" width="45%" src="gruvbox.png"/>
-<a href="https://github.com/kornyellow"><img width="45%" src="https://github-readme-stats.vercel.app/api?username=kornyellow&show_icons=true&theme=gruvbox"></a>
-<a href="https://github.com/kornyellow"><img width="45%" src="http://github-readme-streak-stats.herokuapp.com/?user=kornyellow&theme=gruvbox"></a>
+<a href="https://github.com/kornyellow"><img width="50%" src="https://github-readme-stats.vercel.app/api?username=kornyellow&show_icons=true&theme=gruvbox"></a>
+<a href="https://github.com/kornyellow"><img width="50%" src="http://github-readme-streak-stats.herokuapp.com/?user=kornyellow&theme=gruvbox"></a>
 
 # สวัสดีงับ !
 ผม กร โรจน์รัตนปัญญา ผมคือชาวฟรีแลนซ์ในกรุงเทพฯ เป็นนักศึกษาที่ชอบเขียนโค้ดมาก!
